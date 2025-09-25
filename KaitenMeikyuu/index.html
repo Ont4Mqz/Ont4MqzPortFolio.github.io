@@ -2,60 +2,45 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>界転迷宮 - ソースコード一覧</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <title>Unity Scripts Viewer</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: monospace;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
             padding: 20px;
-            background: #f9f9f9;
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
+        details {
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: #2d2d2d;
         }
 
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #9cdcfe;
         }
 
         pre {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
             overflow-x: auto;
+            padding: 10px;
+            background-color: #1e1e1e;
+            border-radius: 5px;
         }
-
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-            nav a {
-                margin: 0 10px;
-                color: #2a5bd7;
-                text-decoration: none;
-            }
-
-                nav a:hover {
-                    text-decoration: underline;
-                }
     </style>
 </head>
 <body>
-    <h1>界転迷宮 - ソースコード</h1>
 
-    <nav>
-        <a href="#player">PlayerController.cs</a>
-        <a href="#enemy">EnemyAI.cs</a>
-        <a href="#game">GameManager.cs</a>
-    </nav>
+    <h1>Unity Scripts Viewer</h1>
 
-    <h2 id="player">PlayerController.cs</h2>
-    <pre><code class="language-csharp">
+    <details>
+        <summary>PlayerController.cs</summary>
+        <pre><code>
+    // ==== ここから PlayerController.cs のコード ====
     using Unity.VisualScripting;
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -333,37 +318,65 @@
                                     }
                                     }
 
+                                    // （以下に PlayerController.cs のコードを貼ってください）
 </code></pre>
+    </details>
 
-    <h2 id="enemy">EnemyAI.cs</h2>
-    <pre><code class="language-csharp">
-using UnityEngine;
-
-public class EnemyAI : MonoBehaviour {
-    public Transform target;
-    public float speed = 2f;
-    void Update() {
-        if (target != null) {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
-    }
-}
+    <details>
+        <summary>CameraSwitcher.cs</summary>
+        <pre><code>
+// ==== ここから CameraSwitcher.cs のコード ====
+// （以下に CameraSwitcher.cs のコードを貼ってください）
   </code></pre>
+    </details>
 
-    <h2 id="game">GameManager.cs</h2>
-    <pre><code class="language-csharp">
-using UnityEngine;
-
-public class GameManager : MonoBehaviour {
-    public int score;
-    public void AddScore(int amount) {
-        score += amount;
-        Debug.Log("Score: " + score);
-    }
-}
+    <details>
+        <summary>ClippingObject.cs</summary>
+        <pre><code>
+// ==== ここから ClippingObject.cs のコード ====
+// （以下に ClippingObject.cs のコードを貼ってください）
   </code></pre>
+    </details>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    <details>
+        <summary>GTUIManager.cs</summary>
+        <pre><code>
+// ==== ここから GTUIManager.cs のコード ====
+// （以下に GTUIManager.cs のコードを貼ってください）
+  </code></pre>
+    </details>
+
+    <details>
+        <summary>KurukuruEnemy.cs</summary>
+        <pre><code>
+// ==== ここから KurukuruEnemy.cs のコード ====
+// （以下に KurukuruEnemy.cs のコードを貼ってください）
+  </code></pre>
+    </details>
+
+    <details>
+        <summary>TransitionEventReceiver.cs</summary>
+        <pre><code>
+// ==== ここから TransitionEventReceiver.cs のコード ====
+// （以下に TransitionEventReceiver.cs のコードを貼ってください）
+  </code></pre>
+    </details>
+
+    <details>
+        <summary>BGMManager.cs</summary>
+        <pre><code>
+// ==== ここから BGMManager.cs のコード ====
+// （以下に BGMManager.cs のコードを貼ってください）
+  </code></pre>
+    </details>
+
+    <details>
+        <summary>OperationManager.cs</summary>
+        <pre><code>
+// ==== ここから OperationManager.cs のコード ====
+// （以下に OperationManager.cs のコードを貼ってください）
+  </code></pre>
+    </details>
+
 </body>
 </html>
