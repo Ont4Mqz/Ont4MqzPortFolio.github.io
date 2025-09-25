@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>界転迷宮 - ソースコード一覧</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        pre {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            nav a {
+                margin: 0 10px;
+                color: #2a5bd7;
+                text-decoration: none;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <h1>界転迷宮 - ソースコード</h1>
+
+    <nav>
+        <a href="#player">PlayerController.cs</a>
+        <a href="#enemy">EnemyAI.cs</a>
+        <a href="#game">GameManager.cs</a>
+    </nav>
+
+    <h2 id="player">PlayerController.cs</h2>
+    <pre><code class="language-csharp">
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour {
+    public float speed = 5f;
+    void Update() {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        transform.Translate(new Vector3(h, 0, v) * speed * Time.deltaTime);
+    }
+}
+  </code></pre>
+
+    <h2 id="enemy">EnemyAI.cs</h2>
+    <pre><code class="language-csharp">
+using UnityEngine;
+
+public class EnemyAI : MonoBehaviour {
+    public Transform target;
+    public float speed = 2f;
+    void Update() {
+        if (target != null) {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+    }
+}
+  </code></pre>
+
+    <h2 id="game">GameManager.cs</h2>
+    <pre><code class="language-csharp">
+using UnityEngine;
+
+public class GameManager : MonoBehaviour {
+    public int score;
+    public void AddScore(int amount) {
+        score += amount;
+        Debug.Log("Score: " + score);
+    }
+}
+  </code></pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+</body>
+</html>
